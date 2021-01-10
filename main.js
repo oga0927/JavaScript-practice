@@ -44,20 +44,55 @@
 // });
 // console.log(filteredProducdts);
 
-var post = {id: 4,title:'初めての投稿'};
-var comments = [
-  {postId: 4, content:'いい記事ですね'},
-  {postId: 3, content:'勉強になりました'},
-  {postId: 4, content:'なるほど'}
+// var post = {id: 4,title:'初めての投稿'};
+// var comments = [
+//   {postId: 4, content:'いい記事ですね'},
+//   {postId: 3, content:'勉強になりました'},
+//   {postId: 4, content:'なるほど'}
+// ];
+
+// function commentsForPost(post, comments) {
+//   return comments.filter(function(comment) {
+//     return comment.postId === post.id;
+//   });
+// }
+
+// commentsForPost(post, comments);
+
+// console.log(commentsForPost(post,comments));
+
+// var users = [
+//   { id: 1, admin: true },  
+//   { id: 2, admin: false },
+//   { id: 3, admin: false },
+//   { id: 4, admin: false },
+//   { id: 5, admin: true },
+//  ];
+ 
+//  var filteredUsers = users.filter(function(user) {
+//      return user.admin === true;
+//  });
+//  var filteredUsers;
+
+var users = [
+  {name: '太郎'},
+  {name: '次郎'},
+  {mname:'三郎'}
 ];
 
-function commentsForPost(post, comments) {
-  return comments.filter(function(comment) {
-    return comment.postId === post.id;
-  });
-}
+// var user;
 
-commentsForPost(post, comments);
+// for (var i = 0; i < users.length; i++) {
+//   if (users[i].name === '次郎') {
+//     user = users[i];
+//     break;
+//   }
+// }
 
-console.log(commentsForPost(post,comments));
+// user; 
+// console.log(user);
 
+// var user;
+// users.find(function(user) {
+//   return user.name === '次郎';
+// });
