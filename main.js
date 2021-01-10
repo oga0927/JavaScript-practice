@@ -74,11 +74,11 @@
 //  });
 //  var filteredUsers;
 
-var users = [
-  {name: '太郎'},
-  {name: '次郎'},
-  {mname:'三郎'}
-];
+// var users = [
+//   {name: '太郎'},
+//   {name: '次郎'},
+//   {mname:'三郎'}
+// ];
 
 // var user;
 
@@ -96,3 +96,29 @@ var users = [
 // users.find(function(user) {
 //   return user.name === '次郎';
 // });
+
+var posts = [
+  {id: 1, title:'古い投稿'},
+  {id: 2, title:'新しい投稿'}
+];
+
+var comment = { postId: 2, content: 'イイネ！'}
+
+function postForComment(posts, comment) {
+  return posts.find(function(post) {
+    return post.id === comment.postId;
+  });
+}
+
+postForComment(posts,comment);
+console.log();
+
+var users = [
+  { id: 1, admin: false },
+  { id: 2, admin: false },
+  { id: 3, admin: true }
+];
+
+var admin = users.find(function(user) {
+  return user.admin === true;
+})
