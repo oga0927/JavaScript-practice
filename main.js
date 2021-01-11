@@ -74,10 +74,13 @@
 //  });
 //  var filteredUsers;
 
+
+// findメソッド
+
 // var users = [
 //   {name: '太郎'},
 //   {name: '次郎'},
-//   {mname:'三郎'}
+//   {name:'三郎'}
 // ];
 
 // var user;
@@ -97,28 +100,47 @@
 //   return user.name === '次郎';
 // });
 
-var posts = [
-  {id: 1, title:'古い投稿'},
-  {id: 2, title:'新しい投稿'}
+// var posts = [
+//   {id: 1, title:'古い投稿'},
+//   {id: 2, title:'新しい投稿'}
+// ];
+
+// var comment = { postId: 2, content: 'イイネ！'}
+
+// function postForComment(posts, comment) {
+//   return posts.find(function(post) {
+//     return post.id === comment.postId;
+//   });
+// }
+
+// postForComment(posts,comment);
+// console.log();
+
+// var users = [
+//   { id: 1, admin: false },
+//   { id: 2, admin: false },
+//   { id: 3, admin: true }
+// ];
+
+// var admin = users.find(function(user) {
+//   return user.admin === true;
+// })
+
+var computers = [
+  {name: 'Apple', ram: 24},
+  {name: 'Compaq', ram: 4},
+  {name: 'Acer', ram: 32}
 ];
 
-var comment = { postId: 2, content: 'イイネ！'}
+// 全てで動かせるフラグ
+// var allComputersCanRun = true;
 
-function postForComment(posts, comment) {
-  return posts.find(function(post) {
-    return post.id === comment.postId;
-  });
-}
+// どれかでは動かせるフラグ
+// var someComputersCanRun　= false;
+  allComputersCanRun = true;
+  someComputersCanRun = false;
 
-postForComment(posts,comment);
-console.log();
 
-var users = [
-  { id: 1, admin: false },
-  { id: 2, admin: false },
-  { id: 3, admin: true }
-];
-
-var admin = users.find(function(user) {
-  return user.admin === true;
-})
+computers.every(function(computer) {
+  return computer.ram >= 2;
+});
