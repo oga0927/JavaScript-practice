@@ -142,5 +142,10 @@ var computers = [
 
 
 computers.every(function(computer) {
-  return computer.ram >= 2;
+  return computer.ram >= 16;
 });
+
+
+computers.some(function(computer) {
+  return computer.ram >= 16;
+})
