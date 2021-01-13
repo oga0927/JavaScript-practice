@@ -126,26 +126,47 @@
 //   return user.admin === true;
 // })
 
-var computers = [
-  {name: 'Apple', ram: 24},
-  {name: 'Compaq', ram: 4},
-  {name: 'Acer', ram: 32}
-];
+// var computers = [
+//   {name: 'Apple', ram: 24},
+//   {name: 'Compaq', ram: 4},
+//   {name: 'Acer', ram: 32}
+// ];
 
-// 全てで動かせるフラグ
-// var allComputersCanRun = true;
+// // 全てで動かせるフラグ
+// // var allComputersCanRun = true;
 
-// どれかでは動かせるフラグ
-// var someComputersCanRun　= false;
-  allComputersCanRun = true;
-  someComputersCanRun = false;
+// // どれかでは動かせるフラグ
+// // var someComputersCanRun　= false;
+//   allComputersCanRun = true;
+//   someComputersCanRun = false;
 
+// // 全ての要素が当てはまるのか
+// computers.every(function(computer) {
+//   return computer.ram >= 16;
+// });
 
-computers.every(function(computer) {
-  return computer.ram >= 16;
-});
+// // 要素が一つでも当てはまるか
+// computers.some(function(computer) {
+//   return computer.ram >= 16;
+// });
 
+// var names = [
+//   'ミッキー',
+//   'ミニー',
+//   'ドナルド'
+// ];
 
-computers.some(function(computer) {
-  return computer.ram >= 16;
-})
+// names.every(function(name) {
+//   return name.length >= 4;
+// });
+
+// var names = [
+//   'ミッキー',
+//   'ミニー',
+//   'ドナルド'
+// ];
+
+// names.some(function(name) {
+//   return name.length >= 4;
+// });
+ 
