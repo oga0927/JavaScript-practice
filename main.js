@@ -1,3 +1,7 @@
+
+// mapメソッド
+
+
 // var cars = [
 //   { type: '軽自動車', price: '安い'},
 //   { type: 'フェラーリ', price: '高い'}
@@ -8,7 +12,13 @@
 // });
 
 // prices;
-// console.log(prices);
+
+
+
+
+
+// forEachメソッド
+
 
 // function handlePosts() {
 //   var posts = [
@@ -27,6 +37,13 @@
 //   { name: 'セロリ', type: '野菜', quantity: 30, price: 9},
 //   { name: 'オレンジ', type: 'フルーツ', quantity: 3, price: 5}
 // ];
+
+
+
+
+
+// filterメソッド
+
 
 // var filteredProducdts = [];
 
@@ -73,6 +90,9 @@
 //      return user.admin === true;
 //  });
 //  var filteredUsers;
+
+
+
 
 
 // findメソッド
@@ -126,6 +146,11 @@
 //   return user.admin === true;
 // })
 
+
+
+
+// everyとsomeメソッド
+
 // var computers = [
 //   {name: 'Apple', ram: 24},
 //   {name: 'Compaq', ram: 4},
@@ -169,4 +194,36 @@
 // names.some(function(name) {
 //   return name.length >= 4;
 // });
+
+
+
+
+
+// reduceメソッド
  
+// var numbers = [10, 20, 30];
+// var sum = 0;
+
+// numbers.reduce(function(sum, number) {
+//   return sum + number;
+// }, 0);
+
+// var primaryColors = [
+//   {color: 'red'},
+//   {color: 'yellow'},
+//   {color: 'blue'}
+// ];
+
+// primaryColors.reduce(function(previous,primaryColors) {
+//   previous.push(primaryColors.color)
+//   return previous;
+// }, []);
+
+function balanceParens(string) {
+  return !string.split('').reduce(function(previous,char) {
+     if (char === '(') { return previous + 1}
+     if (char === ')') { return previous - 1}
+  }, 0);
+};
+
+balanceParens('()');
