@@ -84,12 +84,12 @@
 //   { id: 3, admin: false },
 //   { id: 4, admin: false },
 //   { id: 5, admin: true },
-//  ];
- 
-//  var filteredUsers = users.filter(function(user) {
-//      return user.admin === true;
-//  });
-//  var filteredUsers;
+// ];
+
+// var filteredUsers = users.filter(function(user) {
+//     return user.admin === true;
+// });
+// var filteredUsers;
 
 
 
@@ -219,11 +219,16 @@
 //   return previous;
 // }, []);
 
-function balanceParens(string) {
-  return !string.split('').reduce(function(previous,char) {
-     if (char === '(') { return previous + 1}
-     if (char === ')') { return previous - 1}
-  }, 0);
-};
+// function balanceParens(string) {
+//   return !string.split('').reduce(function(previous,char) {
+//     if (char === '(') { return previous + 1}
+//     if (char === ')') { return previous - 1}
+//   }, 0);
+// };
 
-balanceParens('()');
+// balanceParens('()');
+
+var name = '太郎';
+var title  = 'Webエンジニア';
+var hourlySalary = 4000;
+
