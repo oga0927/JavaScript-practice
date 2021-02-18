@@ -83,7 +83,7 @@ var filteredUsers;
 
 
 
-// findメソッド
+// findメソッド(特定のデータを探す)
 var users = [
   {name: '太郎'},
   {name: '次郎'},
@@ -237,4 +237,94 @@ function getMesssage() {
 }
 getMesssage();
 
+const team = {
+  members: ['太郎','はな子'],
+  teamName: 'スーパーチーム',
+  teamSummary: function() {
+    return this.members.map((member) => {
+      // lexical this = アロー関数を書く場所でthisが確定する
+      return `${member}は${this.teamName}の所属です`;
+    });
+  }
+};
+
+team.teamSummary();
+
+// ES5
+const fibonacci = function(n) {
+  if (n < 3) return 1;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// リファクタリング
+const fibonacci = (n) => {
+  if (n < 3) return 1;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// ES5
+const profile = {
+  name: '太郎'
+};
+// ES６リファクタリング
+const profile = {
+  name: '太郎',
+  getName: function() {
+    return this.name;
+  }
+};
+
+
+
+
+
+
+// ES5
+function createBookShop(inventry) {
+  return {
+    inventry: inventry,
+    inventryValue: function() {
+      return this.inventry.reduce((total, book) => total + book.price, 0);
+    },
+    priceForTitle: function(title) {
+      return this.inventry.find(book => book.title === title).price;
+    }
+  };
+}
+
+const inventry = [
+  {title: 'ハリーポッター', price: 1000 },
+  {title: 'JavaScript', price: 1500}
+];
+
+const bookShop = createBookShop(inventry);
+// bookShop.inventryValue();
+bookShop.priceForTitle('ハリーポッター');
+
+
+
+// ES６リファクタリング
+function createBookShop(inventry) {
+  return {
+    // 1回の記述でOK
+    inventry,
+    inventryValue() {
+      return this.inventry.reduce((total, book) => total + book.price, 0);
+    },
+    // :とfunctionは不要
+    priceForTitle(title) {
+      return this.inventry.find(book => book.title === title).price;
+    }
+  };
+}
+
+const inventry = [
+  {title: 'ハリーポッター', price: 1000 },
+  {title: 'JavaScript', price: 1500}
+];
+
+const bookShop = createBookShop(inventry);
+
+// bookShop.inventryValue();
+bookShop.priceForTitle('ハリーポッター');
 
