@@ -279,6 +279,7 @@ const profile = {
 
 
 
+// オブジェクトリテラル
 // ES5
 function createBookShop(inventry) {
   return {
@@ -306,8 +307,9 @@ bookShop.priceForTitle('ハリーポッター');
 // ES６リファクタリング
 function createBookShop(inventry) {
   return {
-    // 1回の記述でOK
+    // オブジェクトのキーとvalueが同じなら1回の記述でOK
     inventry,
+     // :とfunctionは不要
     inventryValue() {
       return this.inventry.reduce((total, book) => total + book.price, 0);
     },
@@ -328,3 +330,85 @@ const bookShop = createBookShop(inventry);
 // bookShop.inventryValue();
 bookShop.priceForTitle('ハリーポッター');
 
+
+
+// ES5
+const red = '#ff0000';
+const blue = '#0000ff';
+
+const COLORS = { red: red, blue: blue };
+
+
+
+// ES６リファクタリング
+const red = '#ff0000';
+const blue = '#0000ff';
+
+const COLORS = { 
+  red, 
+  blue 
+};
+
+
+
+// ES5
+const fields = ['firstName', 'lastName', 
+'phoneNumber'];
+      
+const props = { fields: fields };
+
+// ES６リファクタリング
+const fields = [
+  'firstName', 
+  'lastName', 
+  'phoneNumber'
+  ];
+    
+const props = { fields };
+
+
+// ES5
+const canvasDimensions = function(width, initialHeight) {
+  const height = initialHeight * 9 /16;
+  return { 
+    width: width, 
+    height: height 
+  };
+}
+
+// ES６リファクタリング
+const canvasDimensions = (width, initialHeight) => {
+  const height = initialHeight * 9 /16;
+  return { 
+    width, 
+    height 
+  };
+}
+
+
+// ES5
+const color = 'red';
+
+const Car = {
+  color: color,
+  drive: function() {
+    return 'ブーーン!';
+  },
+  getColor: function() {
+    return this.color;
+  }
+};
+
+
+// ES６リファクタリング
+const color = 'red';
+
+const Car = {
+  color,
+  drive() {
+    return 'ブーーン!';
+  },
+  getColor() {
+    return this.color;
+  }
+};
