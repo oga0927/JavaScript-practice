@@ -412,3 +412,60 @@ const Car = {
     return this.color;
   }
 };
+
+
+
+
+// 関数デフォルト引数を指定する
+
+
+// ES5
+function makeAjaxRequest(url, method) {
+  if (!method) {
+    method ='GET'
+  }
+  // ajaxリクエストをする必要があると想定
+  return method;
+}
+
+makeAjaxRequest('google.com');
+makeAjaxRequest('google.com', 'POST')
+
+
+// ES６リファクタリング
+function makeAjaxRequest(url, method = 'GET') {
+  return method;
+}
+
+makeAjaxRequest('google.com', null);
+makeAjaxRequest('google.com', 'POST');
+
+function User(id = generateId()) {
+  this.id = id;
+}
+
+function generateId() {
+  return Math.randam() * 99999;
+}
+
+function createdAdminUser(user = new User()) {
+  user.admin = true;
+
+  return user;
+}
+
+createdAdminUser();
+
+
+// JavaScriptのコード実行方法について
+promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve();
+  },3000)
+});
+
+promise
+  .then(() => console.log('処理が完了しました'))
+  .then(() => console.log('こんにちは'))
+  .catch(() => console.log('問題発生'))
+// promise.catch();
