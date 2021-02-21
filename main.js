@@ -457,7 +457,7 @@ function createdAdminUser(user = new User()) {
 createdAdminUser();
 
 
-// JavaScriptのコード実行方法について
+JavaScriptのコード実行方法について
 promise = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve();
@@ -469,3 +469,33 @@ promise
   .then(() => console.log('こんにちは'))
   .catch(() => console.log('問題発生'))
 // promise.catch();
+
+
+// fetchを使ってajaxリクエスト
+url = "https://jsonplaceholder.typicode.com1234/posts/";
+
+fetch(url);
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(error => console.log("問題発生!!" ,error));
+
+// Restとspread演算子
+
+// ES5
+function addNumbers(numbers) {
+  return numbers.reduce((sum, number) => {
+    return sum + number;
+  },0)
+}
+
+addNumbers([1,2,3,4,5]);
+
+// ES6
+// Rest演算子
+function addNumbers(...numbers) {
+  return numbers.reduce((sum, number) => {
+    return sum + number;
+  },0);
+}
+
+addNumbers(1,2,3,4,5,6);
