@@ -513,3 +513,27 @@ names.every((name) => {
 names.some((name) => {
   return name.length >= 3
 })
+
+function Field(value) {
+	this.value = value;
+}
+
+Field.prototype.validate = function() {
+	return this.value.length > 0;
+}
+
+var username = new Field('my_username');
+var password =  new Field('my_password');
+var birthday = new Field('2020/10/10');
+
+
+var fields = [
+  username,
+  password,
+  birthday,
+  ]
+
+
+fields.every((field) => {
+  return field.validate();
+})
