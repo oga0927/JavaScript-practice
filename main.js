@@ -537,3 +537,13 @@ var fields = [
 fields.every((field) => {
   return field.validate();
 })
+
+var requests = [
+  { url: '/photos', status: 'complete' },
+  { url: '/albums', status: 'pending' },
+  { url: '/users', status: 'failed' }
+];
+
+var inProgress = requests.some((request) => {
+    return request.status === 'pending';
+});
