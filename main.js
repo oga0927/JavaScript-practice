@@ -474,7 +474,7 @@ promise
 // fetchを使ってajaxリクエスト
 url = "https://jsonplaceholder.typicode.com1234/posts/";
 
-fetch(url);
+fetch(url)
   .then(response => response.json())
   .then(response => console.log(response))
   .catch(error => console.log("問題発生!!" ,error));
@@ -499,3 +499,17 @@ function addNumbers(...numbers) {
 }
 
 addNumbers(1,2,3,4,5,6);
+
+var names = [
+  'けん',
+  'はなこ',
+  'そういちろう',
+  ];
+
+names.every((name) => {
+  return name.length >= 3;
+});
+
+names.some((name) => {
+  return name.length >= 3
+})
