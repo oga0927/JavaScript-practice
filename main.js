@@ -570,6 +570,31 @@ const fruits2 = ['いちご', 'メロン', 'キウイ'];
 // concatメソッドは配列を結合させる
 fruits1.concat(fruits2);
 
+// concatを使わない例 spread演算子
+[...fruits1, ...fruits2];
+
+// Destructuring
+const expense = {
+  type: '交際費',
+  amount : '4500JPY'
+};
+
+const { type, amount } = expense
+
+type;
+amount;
+
+var savedFile = {
+	extension: 'jpg',
+  name: 'profile',
+  size: 14040
+}
+
+function fileSummary({extension, name,  size}, {username}) {
+	return `${username}:${name}. ${extension}の容量は${size}です`
+}
+
+fileSummary(savedFile, {username: 'OGA'})
 
 
 
