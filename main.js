@@ -564,4 +564,12 @@ function addNumbers(...numbers) {
 
 addNumbers(1,2,3,4,5,6,7);
 
+const fruits1 = ['みかん', 'りんご', 'スイカ'];
+const fruits2 = ['いちご', 'メロン', 'キウイ'];
+
+// concatメソッドは配列を結合させる
+fruits1.concat(fruits2);
+
+
+
 
