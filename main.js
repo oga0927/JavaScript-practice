@@ -38,3 +38,17 @@ var trips = [
 var speeds = trips.map((trip) => {
     return trip.distance / trip.time;
 });
+
+
+// 50より大きい数字を絞り込み、filteredNumbersへ格納
+// var numbers = [15, 25, 35, 45, 55, 65, 75, 85, 95];
+
+// var filteredNumbers;
+
+
+var numbers = [15, 25, 35, 45, 55, 65, 75, 85, 95];
+
+var filteredNumbers = numbers.filter((number) => {
+    return number > 50;
+});
+
