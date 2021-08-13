@@ -52,3 +52,44 @@ var filteredNumbers = numbers.filter((number) => {
     return number > 50;
 });
 
+// ユーザー配列の中からadmin権限を持っているユーザーを探す
+var users = [
+  { id: 1, admin: false },
+  { id: 2, admin: false },
+  { id: 3, admin: true }
+];
+
+var admin;
+
+
+
+var users = [
+  { id: 1, admin: false },
+  { id: 2, admin: false },
+  { id: 3, admin: true }
+];
+
+var admin = users.find((user) => {
+    return user.admin === true;
+});
+
+
+var accounts = [
+  { balance: -10 },
+  { balance: 12 },
+  { balance: 0 }
+];
+
+var account;
+
+var accounts = [
+  { balance: -10 },
+  { balance: 12 },
+  { balance: 0 }
+];
+
+var account = accounts.find((account) => {
+    return account.balance === 12;
+});
+
+
