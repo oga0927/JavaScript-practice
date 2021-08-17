@@ -91,3 +91,18 @@ var accounts = [
 var account = accounts.find((account) => {
     return account.balance === 12;
 });
+
+// function product(a, b, c, d, e) {
+//   var numbers = [a,b,c,d,e];
+  
+//   return numbers.reduce(function(acc, number) {
+//     return acc * number;
+//   }, 1)
+// }
+
+// rest演算子
+function product(...numbers) {
+  return numbers.reduce((acc, number) => {
+    return acc * number;
+  }, 1)
+}
