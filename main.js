@@ -52,3 +52,51 @@ var filteredNumbers = numbers.filter((number) => {
     return number > 50;
 });
 
+
+
+window.name = 'ミニー'
+
+const character = {
+	name: 'ミッキー',
+  hello: function() {
+  console.log('Hello' + this.name);
+  }
+}
+
+character.hello();
+
+const helloTom = character.hello.bind(character);
+
+function fn(ref) {
+	ref();
+}
+
+fn(helloTom);
+
+function a() {
+  console.log('hello' + this.name);
+}
+
+const b = a.bind({ name: 'ドナルド'});
+
+b();
+
+// 問題
+// const person = {
+// 	hello() {
+//   return 'hello Tom';
+//   }
+// }
+
+// setTimeout(person, 5000);
+
+const person = {
+  hello() {
+    return 'hello Tom'
+  }
+}
+
+setTimeout(() => {
+  const hello = person.hello();
+  console.log(hello);
+},1000)
