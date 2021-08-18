@@ -53,50 +53,42 @@ var filteredNumbers = numbers.filter((number) => {
 });
 
 
+// ユーザー配列の中からadmin権限を持っているユーザーを探す
+var users = [
+  { id: 1, admin: false },
+  { id: 2, admin: false },
+  { id: 3, admin: true }
+];
 
-window.name = 'ミニー'
+var admin;
 
-const character = {
-	name: 'ミッキー',
-  hello: function() {
-  console.log('Hello' + this.name);
-  }
-}
 
-character.hello();
 
-const helloTom = character.hello.bind(character);
+var users = [
+  { id: 1, admin: false },
+  { id: 2, admin: false },
+  { id: 3, admin: true }
+];
 
-function fn(ref) {
-	ref();
-}
+var admin = users.find((user) => {
+    return user.admin === true;
+});
 
-fn(helloTom);
 
-function a() {
-  console.log('hello' + this.name);
-}
+var accounts = [
+  { balance: -10 },
+  { balance: 12 },
+  { balance: 0 }
+];
 
-const b = a.bind({ name: 'ドナルド'});
+var account;
 
-b();
+var accounts = [
+  { balance: -10 },
+  { balance: 12 },
+  { balance: 0 }
+];
 
-// 問題
-// const person = {
-// 	hello() {
-//   return 'hello Tom';
-//   }
-// }
-
-// setTimeout(person, 5000);
-
-const person = {
-  hello() {
-    return 'hello Tom'
-  }
-}
-
-setTimeout(() => {
-  const hello = person.hello();
-  console.log(hello);
-},1000)
+var account = accounts.find((account) => {
+    return account.balance === 12;
+});
