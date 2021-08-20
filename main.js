@@ -3,3 +3,7 @@ let a = function b() {
 }
 
 a();
+
+(function() {
+  console.log('called');
+})();
