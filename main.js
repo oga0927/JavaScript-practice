@@ -1,9 +1,9 @@
-let a = function b() {
-  console.log('called');
+function fn() {
+  if(true) {
+    let a = 'fn called';
+    return a;
+  }
 }
 
-a();
-
-(function() {
-  console.log('called');
-})();
+const result = fn();
+console.log(result);
