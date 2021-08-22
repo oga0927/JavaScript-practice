@@ -27,3 +27,4 @@ printTypeAndValue(d)
 // trueは数値の1に変換する
 let e = d - true;
 printTypeAndValue(e)
+
