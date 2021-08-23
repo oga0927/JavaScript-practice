@@ -1,65 +1,59 @@
-// const a = {
-//   prop: 0
-// }
-
-// let { prop } = a;
-// prop = 1;
-
-// console.log(a, prop);
-
-// function fn({ prop }) {
-//   prop = 1;
-//   console.log(a, prop);
-// }
-
-// fn(a);
-
-// const c = {
-//   prop1: {
-//     prop2: 0
-//   }
-// }
-
-// let { prop1 } = c;
-
-// prop1.prop2 = 1;
-
-// console.log(c, prop1);
-
-let obj = {
-  prop1: 10
-}
-
-function minus(obj, val) {
+// function hello(name) {
   
-  obj.prop1 = obj.prop1 - val; 
+// }
+
+// setTimeout(hello('Tom'),1000)
+
+function a(b) {
+  b();
 }
 
-minus(obj, 1);
-console.log(obj.prop1);
+function b() {
 
-
-
-function double(obj) {
-  // let { prop1 } = obj;
-  // console.log(obj);
-  obj.prop1 = obj.prop1 * 2 
 }
 
-double(obj);
-console.log(obj.prop1);
-
-
-obj.prop2 = {
-  prop3: 1
+function character(name) {
+  console.log('ミッキー' + name);
 }
 
-function fn({ prop2 }) {
-  let prop = prop2;
-  prop.prop3 = 2;
-  prop = { prop3: 3 };
-  return { prop2: prop };
+function character2(name) {
+  console.log('ミニー' + name);
 }
 
-obj = fn(obj);
-console.log(obj.prop2.prop3);
+function fn(cb) {
+  cb('マウス');
+}
+
+fn(character);
+fn(character2);
+
+fn(function(name) {
+  console.log('hello' + name);
+})
+
+// 実引数がセットされていない
+
+setTimeout(character, 5000) //実行してもhello undefinedになる
+
+// どうゆうことか
+// ↓これで実行されている
+function fn(cb) {
+  cb('マウス');
+}
+
+// character(name)の仮引数に値渡ってこないためundefinedで表示される
+function character(name) {
+  console.log('ミッキー' + name);
+}
+
+// 引数を持つコールバック関数を引数を持たないコールバック関数に渡すときの
+// 対処方法は
+
+// 引数を持たないときの対処法
+
+// setTimeoutは何秒か待ってから処理を実行する関数
+setTimeout(() => {
+  const park = character();
+  console.log(park);
+}, 3000)
+
