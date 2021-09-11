@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="js">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // console.log(1);
+    // PromiseTest(300, 2)
+    // .then((change1) => PromiseTest(change1, 3))
+    // .then((change2) => PromiseTest(change2, 3))
+    // .catch((e) => console.log(e))
+    // console.log(3);
+    //   function PromiseTest(pay, seconds) {
+    //       return new Promise((ok, ng) => {
+    //         setTimeout(() => {
+    //           if (pay > 100) {
+    //             let change = pay - 100;
+    //             console.log(`${seconds}秒、おつりは${change}です`);
+    //             ok(change);
+    //           }
+    //           ng('お金がたりません');
+    //         }, seconds * 1000)
+    //       })
+    //     }
+
+    function PromiseTest1(pay) {
+      return new Promise((resolve, reject) => {
+        if(pay > 100) {
+          let change = pay -100
+          console.log(`お釣りは${change}円です`);
+          resolve(change)
+        }
+          reject('失敗')
+      })
+    }
+    console.log(PromiseTest1(300));
+
+  PromiseTest1(300).then(change1 => {
+    console.log(change1);
+    
+  })
+    
+  </script>
+</body>
+</html>

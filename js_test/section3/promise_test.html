@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // 関数の復習
+    function test1() {
+
+    return '関数1';
+    }
+
+    console.log(test1());
+
+    // 変数や定数で処理
+
+    
+
+    // const character = function(){
+    //   return 'ミッキー';
+    // };
+
+    const character = () => {
+      return 'ミッキー';
+    }
+    console.log(character());
+
+    // Promise
+    // 1 状態(ok/ng)と値
+    // 2 promiseチェーン
+    // 3 callbackの引数が1の状態になる
+
+    // Promiseチェーンの作り方
+    function PromiseTest() {
+      //return new Promiseでプロミスを返す　= プロミスチェーンができる
+      return new Promise((ok) => { 
+        // 何かしらの処理(今回は引数で設定した状態 = ok)
+        ok('プロミス！')
+      }) 
+    } 
+    console.log(PromiseTest());
+
+
+
+
+
+    function PromiseTest5() {
+      // promiseの中にコールバック関数をかく
+      return new Promise((ok) => { 
+        // 状態の値を持ってくる。
+        // 今回の場合は【 Promise((ok) => の ok が状態の値 】
+        ok('ハロー')
+      })
+    }
+    console.log(PromiseTest5());
+
+
+
+    // 定数で宣言
+    const PromiseTest6 = new Promise((ok) => {
+      ok('good!')
+    })
+    console.log(PromiseTest6);
+
+    // new Promiseを書いた後はアロー関数
+    new Promise((状態の値) =>{});
+
+
+
+
+
+
+
+    function PromiseTest5() {
+      // promiseの中にコールバック関数をかく
+      return new Promise((ok) => { 
+        // 状態の値を持ってくる。
+        // 今回の場合は【 Promise((ok) => の ok が状態の値 】
+        ok('ハロー')
+      })
+    }
+    console.log(PromiseTest5());
+
+  </script>
+</body>
+</html>

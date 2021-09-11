@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .w300 {
+      width: 300
+    }
+  </style>
+</head>
+<body>
+  <div id="image" class="w300">
+
+  </div>
+  <script>
+    const url = 'https://dog.ceo/api/breeds/image/random';
+
+    const options = {
+      method: 'GET'
+    };
+
+    const fetchTest1 = fetch(url, options);
+    console.log(fetchTest1);
+    
+
+    // 引数は２つ 繋げたいAPIとoptionsでオブジェクト形式
+    const fetchTest2 = fetch(url, options)
+    .then((response) => {
+      response.json()
+    });
+
+    console.log(fetchTest2.message);
+
+    // データの取得を待ってから取得する
+    function fetchDogImage(url, options) {
+      return fetch(url, options)
+      .then((response) => response.json());
+    }
+
+    async function fetchImage(url, options) {
+      const response = await fetchDogImage(url, options)
+      // console.log(response.message);
+      const imageDiv = document.getElementById('image');
+      const imageElement = document.createElement('img')
+      imageElement.src = response.message;
+      imageDiv.appendChild(imageElement)
+      
+      // document.body.appendChild(imageElement);
+    }
+    fetchImage(url, options);
+  </script>
+</body>
+</html>

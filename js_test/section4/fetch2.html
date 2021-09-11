@@ -46,13 +46,7 @@ function getDogImage(url, options){
 
 async function getImage(url, options){
   const response = await getDogImage(url, options);
-  //console.log(response.message);
-
-  const imageDiv = document.getElementById('image');
-  const imageElement = document.createElement('img');
-  imageElement.src = response.message;
- // document.body.appendChild(imageElement);
- imageDiv.appendChild(imageElement);
+  console.log(response.message);
 }
 
 getImage(url, options);
