@@ -11,10 +11,9 @@ if(character_1 === 'プーさん' || character_2 === 'ミニー') {
 }
 
 // 三項演算子
+// 条件 ? 真 : 偽
 
 const score = 80;
 
-const comment = score >= 80 ? 'good' : 'not good';
-
+const comment = score >= 80 ? 'good!!' : 'bad'
 console.log(comment);
-
